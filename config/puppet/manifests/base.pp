@@ -2,4 +2,5 @@ Exec {
 	path => '/usr/bin:/bin:/usr/sbin:/sbin' 
 }
 
-class { 'system-setup' : }
+class { "system-setup" : }
+class { "mysql" : }

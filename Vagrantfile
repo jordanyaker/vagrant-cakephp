@@ -12,8 +12,18 @@ Vagrant.configure("2") do |config|
 
   # Enable provisioning with Puppet stand alone.
   config.vm.provision :puppet do |puppet|
-    # Tell the system to load modules from the ./config/puppet path.
-    puppet.manifests_path = "config/puppet"
+    # Puppet modules are more complex configuration setups which
+    # are helpful for performing tasks like setting up a database
+    # and performing the loading of a default set of objects.
+    puppet.module_path = "config/puppet/modules"
+
+    # Puppet manifests are better suited for more simplistic scripting
+    # which only relies on the commands within the given manifest.
+    puppet.manifests_path = "config/puppet/manifests"
+
+    # The handing of the puppet commands for the setup requires a
+    # base entry point that will be used to call all of the other
+    # configuration/initialization items.
     puppet.manifest_file = "base.pp"
   end
 end

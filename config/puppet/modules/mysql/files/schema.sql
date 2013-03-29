@@ -1,0 +1,1 @@
+-- This would contain the SQL commands for setting up the database schema.

@@ -23,5 +23,6 @@ class system-setup {
     exec { 'apt-get-update':
         creates => '/updated',
         command => "apt-get update && touch /updated",
+        require => File['/home/vagrant/bin']
     }
 }
