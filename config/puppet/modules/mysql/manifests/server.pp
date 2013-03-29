@@ -1,7 +1,6 @@
 class mysql::server {
   package { "mysql-server":
-    ensure => installed,
-    require => Exec['apt-get-update'],
+    ensure => installed
   }
 
   service { "mysql":
