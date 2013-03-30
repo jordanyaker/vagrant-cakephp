@@ -1,6 +1,7 @@
 Exec { 
-	path => '/usr/bin:/bin:/usr/sbin:/sbin' 
+	path => "/usr/bin:/bin:/usr/sbin:/sbin"
 }
 
-class { "system" : } ->
-class { 'mysql' : require => Exec['apt-get-update'] }
+class { "system" : }
+class { "mysql" : }
+class { "apache" : }

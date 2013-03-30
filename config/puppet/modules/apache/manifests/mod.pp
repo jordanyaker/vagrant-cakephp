@@ -3,5 +3,6 @@ class apache::mod {
     unless => "ls /etc/apache2/mods-enabled/rewrite*",
     command => "a2enmod rewrite",
     notify  => Service["apache2"],
+    require => Package["apache2"]
   }
 }
