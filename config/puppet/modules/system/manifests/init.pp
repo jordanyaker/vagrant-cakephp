@@ -1,6 +1,8 @@
 class system {
-   include system::groups
-   include system::users
-   include system::directories
-   include system::update
+  class { 
+    'system::update':;
+    'system::groups':;
+    'system::users':;
+    'system::directories':;
+  }
 }

@@ -4,6 +4,9 @@ class system::directories {
     owner   => 'vagrant',
     group   => 'vagrant',
     mode    => '755',
-    require => [ Group['vagrant'], User['vagrant'] ]
+    require => [ 
+      Group['vagrant'], 
+      User['vagrant'] 
+    ]
   }
 }

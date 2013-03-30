@@ -1,5 +1,10 @@
 class apache {
-  class { "apache::server" : }
-  class { "apache::settings" : }
-  class { "apache::mod" : }
+  package { "apache2": 
+    ensure => installed,
+  } ->
+  class { 
+    "apache::server":;
+    "apache::mod":;
+    "apache::settings":;
+  }
 }
