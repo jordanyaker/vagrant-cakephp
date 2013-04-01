@@ -27,4 +27,10 @@ Vagrant.configure("2") do |config|
     # configuration/initialization items.
     puppet.manifest_file = "base.pp"
   end
+
+  config.vm.provider :virtualbox do |v|
+    # This setting makes it so that network access from inside the vagrant guest
+    # is able to resolve DNS using the hosts VPN connection.
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  end
 end
